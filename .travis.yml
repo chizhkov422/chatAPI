@@ -7,3 +7,9 @@ node_js:
 branches:
   only:
     - master
+
+deploy:
+  provider: heroku
+  app: "chat-testnodejs"
+  api_key:
+    secure: "oINdSLvNuv/tn3a5m5lih6yvr4/ie1Dz3I3uaLjV8awNNG3ESaf2f0XUC3rVa7xhPlkVeSgKmrQzflO7oj8PBhjlf0uuZWZLPm7dIFpVKILGBD+K5y7/q3vSYu+EQ+LZy23eHQQwlLEaFMFekb/BVylttYmpOpHE42TmrtN/G3ePA0a2vJXyKSh3Dd6m+mvhy4DEkft5v352Ba2MdwL20miL22qOMBzXneqQ4wRYebvwLycK/0mQym2NCzQBD7+TXVWl5ytjTvMDtbEONmfEOiY08+EibpyfnrNPOXWe9jvF7om4e/a/+dIgV6wsC5KYbpGGmdJG3+bZSmpNFHL4MHu/plMxENOIN0nP2MFJmCUOVuZErQ6t/qMz73SgifQJrKHU8qayq+BurDeRg4ybX2pf2ijHnebXiVs/mDw/9rJSRbINsjJ23JD4sUKkYBHF5ysasFMFRmx97ECcnEn5W269F2IFTtN3Sapgj64IrPk1vCJ3d3KRxP9ZG6gPDqgxX7xAI7YYj4X6EnWafKAUid6LwK33p5sYsJ+n/HWDvUdEmO+LKkogwvgGrsnfMY+LU3Z9tK4ir9Pbfq5hSp5L7G0muaklPdspT1U5Oe2J17WyFGiiT6FxOQL2/+Zrlkw8GZWgac/QVXAxSB+nqQXR5nkaUVjliczj8EFk/8Jbi9o="
