@@ -8,7 +8,8 @@ branches:
 deploy:
   provider: heroku
   app: chat-testnodejs
-  
+  api_key:
+    secure: SECURE_ENV
 env:
   global:
     secure: I2QNqYeSiMaFSXQvC/giRIZh76RlWxbWNZ5m9CwHKl6KCJPacplvfqQm246Z+pVrak6I4KYIoFeCYc34Inq6o5K45fbEtXI7YW86jojuKjuOusfPdUFUfb4xeSaPH+uRUx9VIH/3+vWXCOlPl3o6BHeGsKVNOUvCGaCMb0Hfh/bG2oQ1tIZn3zm8gHHXnYHNB6FUd/c7zmjaa8xVBtEKdnOIgmwEFS+SnnJMPvdJ3mhPK2dyucKpCmeJjerdL3KMpHFSRCtFPB9sd5oNx5RWGzU07nGS5O2LXJY0MkU929nZhljQivD/SIyHuZmtTEAwUA/M7VwLp4N8/7dmadsT+Gi3+BpNrViolSBmjBMPqRzKmfpafJmL6a3ZnXAy5orV9Hgz+4+lrykczh/6BMaDaXcApVCzL+cOfvfJmSjOrXDthYpsl/T8Ynm8iD2/+WNkWrR1Saem2CswNjgX5geO8LcHnzSQyJ5n6hcnl8aSfmoHyQ2DPNLj4tAm8V0EdpZqdyKfXfowfscQ3vRiGBzQAMML0xjLfiRIyeBz4rN6SwGQTiy7KV/2wnaIhttV/hz6qbz01uzZPGtIPdNZwgdE4ZJ8f4pvt0VYoGBuwnC1nXPhK7kaNTgilWr3matAeBmTzNsJvCmD/LqOLKcVlg83EIfimL8t4HsPUfLqDQP93So=
