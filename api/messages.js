@@ -2,8 +2,30 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require("body-parser");
 const jsonParser = bodyParser.json();
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const AMOUNT_RECORDS_FOR_ONE_PAGE = 10;
+
+// установка схемы
+const messageSheme = new Schema({
+  id: Number,
+  info: {
+    authorEmail: {
+      type: String,
+    },
+    text: {
+      type: String,
+    },
+    dateCreate: {
+      type: Number,
+      default: 0,
+    },
+  },
+});
+
+const Message = mongoose.model("Message", messageSheme);
+
 
 module.exports = (collectionMessages = null) => {
 
@@ -45,7 +67,26 @@ module.exports = (collectionMessages = null) => {
       });
     }
 
-    collectionMessages.insertOne({ id: Date.now(), info: newRecord }, callBackForInsertMessageRequestToDB.bind(null, res));
+    // подключение
+    mongoose.connect("mongodb://batler12:qwerty22@ds121636.mlab.com:21636/chatdb", { useNewUrlParser: true });
+
+    const message = new Message({
+      id: Date.now(),
+      info: newRecord
+    });
+
+    message.save()
+      .then(() => {
+        mongoose.disconnect();
+
+        return res.send({
+          message: "Document inserted",
+          success: true
+        });
+      })
+      .catch(err => {
+        console.error(`Failed to insert document: ${err}`);
+      });
   });
 
 
@@ -133,19 +174,5 @@ function callBackForGetSingleMessageRequestToDB(res, dataMessage) {
     }
   } catch (err) {
     console.error(`Failed to find document: ${err}`);
-  }
-}
-
-function callBackForInsertMessageRequestToDB(res) {
-
-  try {
-    console.log('1 document inserted to collection message');
-
-    return res.send({
-      message: "Document inserted",
-      success: true
-    });
-  } catch (err) {
-    console.error(`Failed to insert document: ${err}`)
   }
 }
