@@ -136,7 +136,7 @@ module.exports = (collectionMessages = null) => {
 function callBackForGetListMessagesRequestToDB(res, err, dataMessage) {
 
   try {
-    if (dataMessage) {
+    if (dataMessage && dataMessage.length) {
       const finalArray = dataMessage.map((item) => {
         return item.info;
       });
